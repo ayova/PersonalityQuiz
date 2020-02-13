@@ -10,6 +10,12 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    static let endQuizSegueIdentifier = "endQuizSegue"
+    
+    var resultText: String?
+    var resultComment: String?
+    
+    
     @IBAction func didTapDone(_ sender: UIBarButtonItem) {
         print("didTapDone")
     }
@@ -20,7 +26,8 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        resultTextLabel.text = resultText
+        resultCommentLabel.text = resultComment
     }
     
 

@@ -178,7 +178,7 @@
                         <outlet property="quizProgressBar" destination="dts-JV-3Gl" id="vLb-2m-xS0"/>
                         <outlet property="secondButton" destination="yiO-R4-TWj" id="zeV-iE-9to"/>
                         <outlet property="thirdButton" destination="W4B-Pn-web" id="F8G-JB-45J"/>
-                        <segue destination="DrG-q3-KQT" kind="show" id="sAs-ij-Fjq"/>
+                        <segue destination="DrG-q3-KQT" kind="show" identifier="endQuizSegue" id="sAs-ij-Fjq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iD-r3-dNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

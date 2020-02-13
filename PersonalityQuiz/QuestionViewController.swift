@@ -10,6 +10,7 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
+    
     var state: State!
     var question: Question?
     
@@ -24,17 +25,26 @@ class QuestionViewController: UIViewController {
     
     
     @IBAction func didTapFirstButton(_ sender: UIButton) {
+        endQuiz()
     }
     
     
     @IBAction func didTapSecondButton(_ sender: UIButton) {
+        endQuiz()
     }
     
     
     @IBAction func didTapThirdButton(_ sender: UIButton) {
+        endQuiz()
     }
     
     @IBAction func didTapFourthButton(_ sender: UIButton) {
+        endQuiz()
+    }
+    
+    
+    func endQuiz() {
+        performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
     }
     
     override func viewDidLoad() {
@@ -45,14 +55,14 @@ class QuestionViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard segue.identifier == ResultsViewController.endQuizSegueIdentifier,
+            let resultsViewController = segue.destination as? ResultsViewController else { return }
+        
+        resultsViewController.resultText = "You are a 🐱!"
+        resultsViewController.resultComment = "You are loyal, friendly, energetic, a little bit lazy but you know how to take care of your friend. Woof!"
+        
     }
-    */
 
 }
