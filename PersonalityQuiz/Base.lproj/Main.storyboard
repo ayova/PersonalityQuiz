@@ -125,11 +125,60 @@
                     <connections>
                         <outlet property="questionTitleLabel" destination="fkD-cn-itu" id="pjr-pN-jYf"/>
                         <outlet property="quizProgressBar" destination="dts-JV-3Gl" id="vLb-2m-xS0"/>
+                        <segue destination="DrG-q3-KQT" kind="show" id="sAs-ij-Fjq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iD-r3-dNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1683" y="144"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="14e-39-UaQ">
+            <objects>
+                <viewController id="DrG-q3-KQT" customClass="ResultsViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gQ6-L1-gLd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a 🐱!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkq-sm-ukX">
+                                <rect key="frame" x="52" y="325.5" width="271" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat are sweet and lovely, just like you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO9-p4-yVi">
+                                <rect key="frame" x="16" y="401.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zby-N0-eSy" firstAttribute="trailing" secondItem="SO9-p4-yVi" secondAttribute="trailing" constant="16" id="4sP-Md-c93"/>
+                            <constraint firstItem="SO9-p4-yVi" firstAttribute="top" secondItem="Gkq-sm-ukX" secondAttribute="bottom" constant="16" id="Hxv-N3-VXi"/>
+                            <constraint firstItem="Gkq-sm-ukX" firstAttribute="centerX" secondItem="Zby-N0-eSy" secondAttribute="centerX" id="Nke-30-yph"/>
+                            <constraint firstItem="Gkq-sm-ukX" firstAttribute="centerY" secondItem="Zby-N0-eSy" secondAttribute="centerY" id="UXO-mQ-y3w"/>
+                            <constraint firstItem="SO9-p4-yVi" firstAttribute="leading" secondItem="Zby-N0-eSy" secondAttribute="leading" constant="16" id="hHd-Ja-PYW"/>
+                            <constraint firstItem="SO9-p4-yVi" firstAttribute="centerX" secondItem="Zby-N0-eSy" secondAttribute="centerX" id="t5y-Px-zvP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zby-N0-eSy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zqj-kU-ITM">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="r9x-33-SoI">
+                            <connections>
+                                <action selector="didTapDone:" destination="DrG-q3-KQT" id="zcN-pp-58R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultCommentLabel" destination="SO9-p4-yVi" id="C4J-l4-65u"/>
+                        <outlet property="resultTextLabel" destination="Gkq-sm-ukX" id="Ehd-q1-qjB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVy-zK-vlv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2612" y="146"/>
         </scene>
         <!--Range Value View Controller-->
         <scene sceneID="0XG-T1-xS2">
