@@ -97,7 +97,7 @@
         <!--Question #1-->
         <scene sceneID="u2J-6b-jpw">
             <objects>
-                <viewController id="B2I-3v-eBt" customClass="QuestionViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Question" id="B2I-3v-eBt" customClass="QuestionViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n5R-Ee-Hfp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -16,12 +16,12 @@ struct State {
     
     init() {
         questions = [
-            //            Question(text: "What is your favorite food?", type: .single, possibleAnswers: [
-            //            Answer(text: "bones", type: .dog),
-            //            Answer(text: "lettuce", type: .turtle),
-            //            Answer(text: "fish", type: .cat),
-            //            Answer(text: "carrot", type: .rabbit)
-            //            ]),
+            Question(text: "What is your favorite food?", type: .single, possibleAnswers: [
+                Answer(text: "bones", type: .dog),
+                Answer(text: "lettuce", type: .turtle),
+                Answer(text: "fish", type: .cat),
+                Answer(text: "carrot", type: .rabbit)
+            ]),
             Question(text: "Which activities do you enjoy?", type: .multiple, possibleAnswers: [
                 Answer(text: "swimming", type: .turtle),
                 Answer(text: "eating", type: .dog),
@@ -56,6 +56,17 @@ struct State {
         return questions[currentQuestionIndex].type
     }
     
+    var hasNextQuestion: Bool {
+        return currentQuestionIndex < questions.count
+    }
+    
+    var currentQuestionNumber: Int {
+        return currentQuestionIndex + 1
+    }
+    
+    var totalNumberOfQuestions: Int {
+        return questions.count
+    }
 }
 
 

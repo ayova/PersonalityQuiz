@@ -9,7 +9,7 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-
+    
     var state: State!
     var question: Question!
     
@@ -64,7 +64,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func submitMultipleChoiceAnswerButton(_ sender: Any) {
     }
-        
+    
     @IBAction func didTapSubmitAnswerButton(_ sender: UIButton) {
         var chosenAnswers: [Answer] = []
         if firstSwitch.isOn {
@@ -86,14 +86,18 @@ class QuestionViewController: UIViewController {
     }
     
     func nextQuestion() {
-        endQuiz()
-    }
-    
-    func endQuiz() {
-        
-        print("Chosen answers: \(state.chosenAnswers)")
-        
-        performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
+        if state.hasNextQuestion {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let questionViewController = storyboard.instantiateViewController(withIdentifier: "Question") as! QuestionViewController
+            questionViewController.state = state
+            navigationController?.show(questionViewController, sender: nil)
+            
+        } else {
+            print("Chosen answers: \(state.chosenAnswers)")
+            
+            performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
+        }
     }
     
     
@@ -104,6 +108,7 @@ class QuestionViewController: UIViewController {
         
         questionTitleLabel.text = question.text
         quizProgressBar.progress = state.currentProgress
+        navigationItem.title = "Question \(state.currentQuestionNumber) / \(state.totalNumberOfQuestions)"
         
         switch question.type {
         case .single:
@@ -116,7 +121,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == ResultsViewController.endQuizSegueIdentifier,
@@ -125,5 +130,5 @@ class QuestionViewController: UIViewController {
         resultsViewController.resultText = "You are a 🐱!"
         resultsViewController.resultComment = "You are loyal, friendly, energetic, a little bit lazy but you know how to take care of your friend. Woof!"
     }
-
+    
 }
