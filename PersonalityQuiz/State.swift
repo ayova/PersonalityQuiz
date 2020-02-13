@@ -67,6 +67,10 @@ struct State {
     var totalNumberOfQuestions: Int {
         return questions.count
     }
+    
+    var winningAnimal: AnimalType {
+        return .dog 
+    }
 }
 
 

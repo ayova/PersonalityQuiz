@@ -152,8 +152,11 @@ class QuestionViewController: UIViewController {
         guard segue.identifier == ResultsViewController.endQuizSegueIdentifier,
             let resultsViewController = segue.destination as? ResultsViewController else { return }
         
-        resultsViewController.resultText = "You are a 🐱!"
-        resultsViewController.resultComment = "You are loyal, friendly, energetic, a little bit lazy but you know how to take care of your friend. Woof!"
+        
+        
+        let winningAnimal = state.winningAnimal
+        resultsViewController.resultText = winningAnimal.message
+        resultsViewController.resultComment = winningAnimal.comment
     }
     
 }

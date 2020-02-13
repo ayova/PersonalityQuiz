@@ -30,7 +30,16 @@ enum AnimalType {
     case rabbit
     case turtle
     
-    var definition: String {
+    var message: String {
+        switch self {
+        case .dog: return "You are a 🐶!"
+        case .cat: return "You are a 🐱!"
+        case .rabbit: return "You are a 🐰!"
+        case .turtle: return "You are a 🐢!"
+        }
+    }
+    
+    var comment: String {
         switch self {
         case .dog:
             return "You are loyal, friendly, energetic, a little bit lazy but you know how to take care of your friend. Woof!"
