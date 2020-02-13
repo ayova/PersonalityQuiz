@@ -10,6 +10,28 @@ import UIKit
 
 class SingleChoiceViewController: QuestionViewController {
 
+    
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
+    @IBOutlet weak var fourthButton: UIButton!
+    
+    
+    @IBAction func didTapFirstButton(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func didTapSecondButton(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func didTapThirdButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func didTapFourthButton(_ sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

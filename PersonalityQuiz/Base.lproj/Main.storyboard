@@ -90,21 +90,145 @@
             </objects>
             <point key="canvasLocation" x="953" y="146"/>
         </scene>
-        <!--Question View Controller-->
+        <!--Question #1-->
         <scene sceneID="u2J-6b-jpw">
             <objects>
                 <viewController id="B2I-3v-eBt" customClass="QuestionViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n5R-Ee-Hfp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favourite food?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkD-cn-itu">
+                                <rect key="frame" x="16" y="60" width="343" height="76.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dts-JV-3Gl">
+                                <rect key="frame" x="16" y="645.5" width="343" height="2.5"/>
+                                <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dts-JV-3Gl" firstAttribute="leading" secondItem="WmN-vd-KG3" secondAttribute="leading" constant="16" id="3gY-cy-ITx"/>
+                            <constraint firstItem="WmN-vd-KG3" firstAttribute="bottom" secondItem="dts-JV-3Gl" secondAttribute="bottom" constant="20" id="5hM-bG-Bhr"/>
+                            <constraint firstItem="WmN-vd-KG3" firstAttribute="trailing" secondItem="fkD-cn-itu" secondAttribute="trailing" constant="16" id="6zR-NS-Yu1"/>
+                            <constraint firstItem="fkD-cn-itu" firstAttribute="top" secondItem="WmN-vd-KG3" secondAttribute="top" constant="16" id="CSC-WL-uaQ"/>
+                            <constraint firstItem="WmN-vd-KG3" firstAttribute="trailing" secondItem="dts-JV-3Gl" secondAttribute="trailing" constant="16" id="XYr-yt-reE"/>
+                            <constraint firstItem="WmN-vd-KG3" firstAttribute="leading" secondItem="fkD-cn-itu" secondAttribute="leading" constant="-16" id="cfW-20-LgH"/>
+                            <constraint firstItem="fkD-cn-itu" firstAttribute="centerX" secondItem="WmN-vd-KG3" secondAttribute="centerX" id="u5P-nc-2cA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WmN-vd-KG3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ReA-sB-cbd"/>
+                    <navigationItem key="navigationItem" title="Question #1" id="ReA-sB-cbd"/>
+                    <connections>
+                        <outlet property="questionTitleLabel" destination="fkD-cn-itu" id="pjr-pN-jYf"/>
+                        <outlet property="quizProgressBar" destination="dts-JV-3Gl" id="vLb-2m-xS0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iD-r3-dNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1683" y="144"/>
+        </scene>
+        <!--Range Value View Controller-->
+        <scene sceneID="0XG-T1-xS2">
+            <objects>
+                <viewController id="URI-pV-GAM" customClass="RangeValueViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AWh-NN-3JB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SI9-sf-YtS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIV-67-gWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3313" y="931"/>
+        </scene>
+        <!--Single Choice View Controller-->
+        <scene sceneID="30Q-2R-mX4">
+            <objects>
+                <viewController id="925-YZ-nXf" customClass="SingleChoiceViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0iq-qo-3Nf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="MF3-vN-Mn0">
+                                <rect key="frame" x="0.0" y="261.5" width="375" height="144"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x3-5k-nXs">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Bones"/>
+                                        <connections>
+                                            <action selector="didTapFirstButton:" destination="925-YZ-nXf" eventType="touchUpInside" id="JwM-rL-zYU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fA-ei-ie6">
+                                        <rect key="frame" x="0.0" y="40" width="56" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Fish"/>
+                                        <connections>
+                                            <action selector="didTapSecondButton:" destination="925-YZ-nXf" eventType="touchUpInside" id="DqE-cj-XYk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJx-nP-teQ">
+                                        <rect key="frame" x="0.0" y="80" width="89" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Lettuce"/>
+                                        <connections>
+                                            <action selector="didTapThirdButton:" destination="925-YZ-nXf" eventType="touchUpInside" id="6UY-hu-Q37"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pe-vu-fKZ">
+                                        <rect key="frame" x="0.0" y="120" width="77" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Carrot"/>
+                                        <connections>
+                                            <action selector="didTapFourthButton:" destination="925-YZ-nXf" eventType="touchUpInside" id="oOG-F0-Gnz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MF3-vN-Mn0" firstAttribute="width" secondItem="0iq-qo-3Nf" secondAttribute="width" id="6N5-en-UjV"/>
+                            <constraint firstItem="MF3-vN-Mn0" firstAttribute="centerX" secondItem="WcA-sO-zn3" secondAttribute="centerX" id="Jnb-nv-4Ul"/>
+                            <constraint firstItem="MF3-vN-Mn0" firstAttribute="centerY" secondItem="WcA-sO-zn3" secondAttribute="centerY" id="MAD-Kf-3Vk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WcA-sO-zn3"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstButton" destination="6x3-5k-nXs" id="eSb-rX-DUo"/>
+                        <outlet property="fourthButton" destination="4pe-vu-fKZ" id="JC5-WP-OqO"/>
+                        <outlet property="secondButton" destination="9fA-ei-ie6" id="pMp-zA-qwl"/>
+                        <outlet property="thirdButton" destination="iJx-nP-teQ" id="oYZ-Eh-L5L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Suy-H7-Mmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682" y="935"/>
+        </scene>
+        <!--Multiple Choice View Controller-->
+        <scene sceneID="wSd-Pl-nML">
+            <objects>
+                <viewController id="lX7-Be-b4b" customClass="MultipleChoiceViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CiX-EF-XVW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9oL-n4-qcI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4A-aY-xyy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2519" y="932"/>
         </scene>
     </scenes>
 </document>

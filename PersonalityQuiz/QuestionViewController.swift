@@ -10,6 +10,10 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
+    @IBOutlet weak var questionTitleLabel: UILabel!
+    @IBOutlet weak var quizProgressBar: UIProgressView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
