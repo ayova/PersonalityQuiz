@@ -14,25 +14,27 @@ class QuestionViewController: UIViewController {
     var state: State!
     var question: Question?
     
+    // MARK: - common outlets
     @IBOutlet weak var questionTitleLabel: UILabel!
     @IBOutlet weak var quizProgressBar: UIProgressView!
     
     
+    @IBOutlet weak var multipleChoiceStackView: UIStackView!
+    @IBOutlet weak var singleChoiceStackView: UIStackView!
+    
+    // MARK: - outlets and actions for single choice
     @IBOutlet weak var firstButton: UIButton!
     @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var fourthButton: UIButton!
     
-    
     @IBAction func didTapFirstButton(_ sender: UIButton) {
         endQuiz()
     }
     
-    
     @IBAction func didTapSecondButton(_ sender: UIButton) {
         endQuiz()
     }
-    
     
     @IBAction func didTapThirdButton(_ sender: UIButton) {
         endQuiz()
@@ -43,10 +45,36 @@ class QuestionViewController: UIViewController {
     }
     
     
+    // MARK: - outlets and actions from multiple choice
+    
+    @IBOutlet weak var firstLabelMultipleChoice: UILabel!
+    
+    @IBOutlet weak var secondLabelMultipleChoice: UILabel!
+    
+    @IBOutlet weak var thirdLabelMultipleChoice: UILabel!
+    
+    @IBOutlet weak var fourthLabelMultipleChoice: UILabel!
+    
+    @IBAction func firstSwitch(_ sender: UISwitch) {
+    }
+    
+    
+    @IBAction func secondSwitch(_ sender: UISwitch) {
+    }
+    
+    @IBAction func thirdSwitch(_ sender: UISwitch) {
+    }
+    
+    @IBAction func fourthSwitch(_ sender: UISwitch) {
+    }
+    
+    
     func endQuiz() {
         performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
     }
     
+    
+    // MARK: - view controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         question = state.nextQuestion()
