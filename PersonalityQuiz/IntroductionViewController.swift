@@ -10,11 +10,15 @@ import UIKit
 
 class IntroductionViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var state = State()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "beginQuizSegue",
+            let navigationController = segue.destination as? UINavigationController,
+            let questionViewController = navigationController.children.first as? QuestionViewController else { return }
+        
+        questionViewController.state = state
     }
-
 
 }
 
