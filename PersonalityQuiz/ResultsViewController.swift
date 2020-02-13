@@ -15,11 +15,6 @@ class ResultsViewController: UIViewController {
     var resultText: String?
     var resultComment: String?
     
-    
-    @IBAction func didTapDone(_ sender: UIBarButtonItem) {
-        print("didTapDone")
-    }
-    
     @IBOutlet weak var resultTextLabel: UILabel!
     @IBOutlet weak var resultCommentLabel: UILabel!
     
@@ -28,6 +23,8 @@ class ResultsViewController: UIViewController {
 
         resultTextLabel.text = resultText
         resultCommentLabel.text = resultComment
+        
+        navigationItem.hidesBackButton = true
     }
     
 

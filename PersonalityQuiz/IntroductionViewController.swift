@@ -19,6 +19,10 @@ class IntroductionViewController: UIViewController {
         
         questionViewController.state = state
     }
+    
+    @IBAction func unwindToIntroduction(unwindSegue: UIStoryboardSegue) {
+        
+    }
 
 }
 
