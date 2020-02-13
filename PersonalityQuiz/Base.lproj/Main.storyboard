@@ -74,5 +74,37 @@
             </objects>
             <point key="canvasLocation" x="133" y="139"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xXd-Bl-ugW">
+            <objects>
+                <navigationController id="hOE-74-gNV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ue7-RS-OMf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="B2I-3v-eBt" kind="relationship" relationship="rootViewController" id="evl-Uf-Cci"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCh-0h-qGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="146"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="u2J-6b-jpw">
+            <objects>
+                <viewController id="B2I-3v-eBt" customClass="QuestionViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n5R-Ee-Hfp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WmN-vd-KG3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ReA-sB-cbd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iD-r3-dNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="144"/>
+        </scene>
     </scenes>
 </document>
