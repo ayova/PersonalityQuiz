@@ -68,6 +68,8 @@ class QuestionViewController: UIViewController {
     @IBAction func fourthSwitch(_ sender: UISwitch) {
     }
     
+    @IBAction func didTapSubmitAnswerButton(_ sender: UIButton) {
+    }
     
     func endQuiz() {
         performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
@@ -77,9 +79,20 @@ class QuestionViewController: UIViewController {
     // MARK: - view controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        question = state.nextQuestion()
-        questionTitleLabel.text = question?.text
+        guard let question = state.nextQuestion() else { return }
+        
+        questionTitleLabel.text = question.text
         quizProgressBar.progress = state.currentProgress
+        
+        switch question.type {
+        case .single:
+            multipleChoiceStackView.isHidden = true
+        case .multiple:
+            singleChoiceStackView.isHidden = true
+        case .ranged:
+            singleChoiceStackView.isHidden = true
+            multipleChoiceStackView.isHidden = true
+        }
     }
     
 

@@ -113,7 +113,7 @@
                                 <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zxd-uM-x9t">
-                                <rect key="frame" x="8" y="265.5" width="359" height="172"/>
+                                <rect key="frame" x="8" y="239.5" width="359" height="224"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2Z-UX-Yvs">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="31"/>
@@ -183,9 +183,18 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXE-gA-xFK">
+                                        <rect key="frame" x="0.0" y="188" width="359" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Submit answer"/>
+                                        <connections>
+                                            <action selector="didTapSubmitAnswerButton:" destination="B2I-3v-eBt" eventType="touchUpInside" id="4fE-fn-Lam"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="C1p-Am-upd" firstAttribute="width" secondItem="Zxd-uM-x9t" secondAttribute="width" id="4CR-2P-ohi"/>
+                                    <constraint firstItem="nXE-gA-xFK" firstAttribute="width" secondItem="Zxd-uM-x9t" secondAttribute="width" id="RcS-f1-mpn"/>
                                     <constraint firstItem="t2Z-UX-Yvs" firstAttribute="width" secondItem="Zxd-uM-x9t" secondAttribute="width" id="lzk-6K-tOn"/>
                                     <constraint firstItem="ZYP-nb-slL" firstAttribute="width" secondItem="Zxd-uM-x9t" secondAttribute="width" id="s4a-Bt-47F"/>
                                     <constraint firstItem="Kmj-ze-05s" firstAttribute="width" secondItem="Zxd-uM-x9t" secondAttribute="width" id="t01-qj-3E1"/>
