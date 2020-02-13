@@ -10,9 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
-    
     var state: State!
-    var question: Question?
+    var question: Question!
     
     // MARK: - common outlets
     @IBOutlet weak var questionTitleLabel: UILabel!
@@ -29,49 +28,71 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var fourthButton: UIButton!
     
     @IBAction func didTapFirstButton(_ sender: UIButton) {
-        endQuiz()
+        guard let question = question else { return }
+        state.add(answers: [question.possibleAnswers[0]])
+        nextQuestion()
     }
     
     @IBAction func didTapSecondButton(_ sender: UIButton) {
-        endQuiz()
+        guard let question = question else { return }
+        state.add(answers: [question.possibleAnswers[1]])
+        nextQuestion()
     }
     
     @IBAction func didTapThirdButton(_ sender: UIButton) {
-        endQuiz()
+        guard let question = question else { return }
+        state.add(answers: [question.possibleAnswers[2]])
+        nextQuestion()
     }
     
     @IBAction func didTapFourthButton(_ sender: UIButton) {
+        guard let question = question else { return }
+        state.add(answers: [question.possibleAnswers[3]])
+        nextQuestion()
+    }
+    
+    // MARK: - outlets and actions from multiple choice
+    @IBOutlet weak var firstLabelMultipleChoice: UILabel!
+    @IBOutlet weak var secondLabelMultipleChoice: UILabel!
+    @IBOutlet weak var thirdLabelMultipleChoice: UILabel!
+    @IBOutlet weak var fourthLabelMultipleChoice: UILabel!
+    
+    @IBOutlet weak var firstSwitch: UISwitch!
+    @IBOutlet weak var secondSwitch: UISwitch!
+    @IBOutlet weak var thirdSwitch: UISwitch!
+    @IBOutlet weak var fourthSwitch: UISwitch!
+    
+    @IBAction func submitMultipleChoiceAnswerButton(_ sender: Any) {
+    }
+        
+    @IBAction func didTapSubmitAnswerButton(_ sender: UIButton) {
+        var chosenAnswers: [Answer] = []
+        if firstSwitch.isOn {
+            chosenAnswers.append(question.possibleAnswers[0])
+        }
+        if secondSwitch.isOn {
+            chosenAnswers.append(question.possibleAnswers[1])
+        }
+        if thirdSwitch.isOn {
+            chosenAnswers.append(question.possibleAnswers[2])
+        }
+        if fourthSwitch.isOn {
+            chosenAnswers.append(question.possibleAnswers[3])
+        }
+        
+        state.add(answers: chosenAnswers)
+        
+        nextQuestion()
+    }
+    
+    func nextQuestion() {
         endQuiz()
     }
     
-    
-    // MARK: - outlets and actions from multiple choice
-    
-    @IBOutlet weak var firstLabelMultipleChoice: UILabel!
-    
-    @IBOutlet weak var secondLabelMultipleChoice: UILabel!
-    
-    @IBOutlet weak var thirdLabelMultipleChoice: UILabel!
-    
-    @IBOutlet weak var fourthLabelMultipleChoice: UILabel!
-    
-    @IBAction func firstSwitch(_ sender: UISwitch) {
-    }
-    
-    
-    @IBAction func secondSwitch(_ sender: UISwitch) {
-    }
-    
-    @IBAction func thirdSwitch(_ sender: UISwitch) {
-    }
-    
-    @IBAction func fourthSwitch(_ sender: UISwitch) {
-    }
-    
-    @IBAction func didTapSubmitAnswerButton(_ sender: UIButton) {
-    }
-    
     func endQuiz() {
+        
+        print("Chosen answers: \(state.chosenAnswers)")
+        
         performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
     }
     
@@ -79,7 +100,7 @@ class QuestionViewController: UIViewController {
     // MARK: - view controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let question = state.nextQuestion() else { return }
+        question = state.nextQuestion()
         
         questionTitleLabel.text = question.text
         quizProgressBar.progress = state.currentProgress
@@ -103,7 +124,6 @@ class QuestionViewController: UIViewController {
         
         resultsViewController.resultText = "You are a 🐱!"
         resultsViewController.resultComment = "You are loyal, friendly, energetic, a little bit lazy but you know how to take care of your friend. Woof!"
-        
     }
 
 }

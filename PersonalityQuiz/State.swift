@@ -10,14 +10,40 @@ import Foundation
 
 
 struct State {
-    let questions: [Question]
-    var currentQuestionIndex: Int
+    private let questions: [Question]
+    private var currentQuestionIndex: Int
+    var chosenAnswers: [Answer]
+    
+    init() {
+        questions = [
+            //            Question(text: "What is your favorite food?", type: .single, possibleAnswers: [
+            //            Answer(text: "bones", type: .dog),
+            //            Answer(text: "lettuce", type: .turtle),
+            //            Answer(text: "fish", type: .cat),
+            //            Answer(text: "carrot", type: .rabbit)
+            //            ]),
+            Question(text: "Which activities do you enjoy?", type: .multiple, possibleAnswers: [
+                Answer(text: "swimming", type: .turtle),
+                Answer(text: "eating", type: .dog),
+                Answer(text: "sleeping", type: .cat),
+                Answer(text: "cuddling", type: .rabbit)
+            ])
+            
+        ]
+        
+        currentQuestionIndex = 0
+        chosenAnswers = []
+    }
     
     mutating func nextQuestion() -> Question? {
         guard currentQuestionIndex < questions.count else { return nil}
         let question = questions[currentQuestionIndex]
         currentQuestionIndex += 1
         return question
+    }
+    
+    mutating func add(answers: [Answer]) {
+        chosenAnswers += answers
     }
     
     var currentProgress: Float {
@@ -30,19 +56,6 @@ struct State {
         return questions[currentQuestionIndex].type
     }
     
-    init() {
-        questions = [
-            Question(text: "What is your favorite food?", type: .single, possibleAnswers: [
-            Answer(text: "bones", type: .dog),
-            Answer(text: "lettuce", type: .turtle),
-            Answer(text: "fish", type: .cat),
-            Answer(text: "carrot", type: .rabbit)
-            ]),
-            
-        ]
-        
-        currentQuestionIndex = 0
-    }
 }
 
 

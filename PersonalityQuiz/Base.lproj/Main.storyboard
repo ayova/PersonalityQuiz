@@ -124,11 +124,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-jC-YPs">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-jC-YPs">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="firstSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="Ogm-I6-PUy"/>
-                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -141,11 +138,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-cX-UMi">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-cX-UMi">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="secondSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="icA-xL-ITL"/>
-                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -158,11 +152,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6V-Fe-np9">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g6V-Fe-np9">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="thirdSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="I3b-hE-inh"/>
-                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -175,11 +166,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-rh-qs0">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-rh-qs0">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="fourthSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="Lbt-I5-23w"/>
-                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -189,6 +177,7 @@
                                         <state key="normal" title="Submit answer"/>
                                         <connections>
                                             <action selector="didTapSubmitAnswerButton:" destination="B2I-3v-eBt" eventType="touchUpInside" id="4fE-fn-Lam"/>
+                                            <action selector="submitMultipleChoiceAnswerButton:" destination="B2I-3v-eBt" eventType="touchUpInside" id="NgS-Go-gRO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -266,16 +255,20 @@
                     <connections>
                         <outlet property="firstButton" destination="NFe-X1-uUb" id="73f-Vc-vsd"/>
                         <outlet property="firstLabelMultipleChoice" destination="1zC-qq-v7w" id="7d7-Ij-Hca"/>
+                        <outlet property="firstSwitch" destination="pkd-jC-YPs" id="YAw-A8-26u"/>
                         <outlet property="fourthButton" destination="ZSU-76-chr" id="5Oy-Hd-PCZ"/>
                         <outlet property="fourthLabelMultipleChoice" destination="xba-Y0-EHk" id="Fzm-3X-oIA"/>
+                        <outlet property="fourthSwitch" destination="a3g-rh-qs0" id="6uy-zR-52w"/>
                         <outlet property="multipleChoiceStackView" destination="Zxd-uM-x9t" id="9XM-3i-8MG"/>
                         <outlet property="questionTitleLabel" destination="fkD-cn-itu" id="pjr-pN-jYf"/>
                         <outlet property="quizProgressBar" destination="dts-JV-3Gl" id="vLb-2m-xS0"/>
                         <outlet property="secondButton" destination="yiO-R4-TWj" id="zeV-iE-9to"/>
                         <outlet property="secondLabelMultipleChoice" destination="na0-yn-UUS" id="aKS-rj-1ir"/>
+                        <outlet property="secondSwitch" destination="L2L-cX-UMi" id="jLu-YT-tiU"/>
                         <outlet property="singleChoiceStackView" destination="fk7-iN-1kP" id="wea-KR-8fO"/>
                         <outlet property="thirdButton" destination="W4B-Pn-web" id="F8G-JB-45J"/>
                         <outlet property="thirdLabelMultipleChoice" destination="BGx-wC-u8a" id="ZC5-ch-9nr"/>
+                        <outlet property="thirdSwitch" destination="g6V-Fe-np9" id="bjx-vy-EAk"/>
                         <segue destination="DrG-q3-KQT" kind="show" identifier="endQuizSegue" id="sAs-ij-Fjq"/>
                     </connections>
                 </viewController>
