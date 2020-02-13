@@ -69,7 +69,27 @@ struct State {
     }
     
     var winningAnimal: AnimalType {
-        return .dog 
+        var frequencyOfAnswers: [AnimalType: Int] = [:]
+        let allAnimals = [AnimalType.dog, AnimalType.cat, AnimalType.rabbit, AnimalType.turtle]
+        
+        // init frequencies
+        for animal in allAnimals {
+            frequencyOfAnswers[animal] = 0
+        }
+        
+        // compute frequencies
+        for answer in chosenAnswers {
+            let animalType = answer.type
+            frequencyOfAnswers[animalType]! += 1
+        }
+        
+        // choose winner
+        let frequentAnswersSorted = frequencyOfAnswers.sorted(by:
+        {(pair1, pair2) -> Bool in
+            return pair1.value > pair2.value
+        })
+
+        return frequentAnswersSorted.first!.key
     }
 }
 
