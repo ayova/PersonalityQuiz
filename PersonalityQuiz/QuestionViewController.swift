@@ -62,7 +62,30 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var thirdSwitch: UISwitch!
     @IBOutlet weak var fourthSwitch: UISwitch!
     
-    @IBAction func submitMultipleChoiceAnswerButton(_ sender: Any) {
+    @IBOutlet weak var submitMultipleAnswerButton: UIButton!
+    
+    @IBAction func didTapFirstSwitch(_ sender: UISwitch) {
+        updateSubmitButton()
+    }
+    
+    @IBAction func didTapSecondSwitch(_ sender: UISwitch) {
+        updateSubmitButton()
+    }
+    
+    @IBAction func didTapThirdSwitch(_ sender: UISwitch) {
+        updateSubmitButton()
+    }
+    
+    @IBAction func didTapFourthSwitch(_ sender: UISwitch) {
+        updateSubmitButton()
+    }
+    
+    func updateSubmitButton() {
+        if firstSwitch.isOn || secondSwitch.isOn || thirdSwitch.isOn || fourthSwitch.isOn {
+            submitMultipleAnswerButton.isEnabled = true
+        } else {
+            submitMultipleAnswerButton.isEnabled = false
+        }
     }
     
     @IBAction func didTapSubmitAnswerButton(_ sender: UIButton) {
@@ -85,30 +108,17 @@ class QuestionViewController: UIViewController {
         nextQuestion()
     }
     
-    func nextQuestion() {
-        if state.hasNextQuestion {
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let questionViewController = storyboard.instantiateViewController(withIdentifier: "Question") as! QuestionViewController
-            questionViewController.state = state
-            navigationController?.show(questionViewController, sender: nil)
-            
-        } else {
-            print("Chosen answers: \(state.chosenAnswers)")
-            
-            performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
-        }
-    }
-    
-    
     // MARK: - view controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Question \(state.currentQuestionNumber) / \(state.totalNumberOfQuestions)"
+        quizProgressBar.progress = state.currentProgress
+        
         question = state.nextQuestion()
         
         questionTitleLabel.text = question.text
-        quizProgressBar.progress = state.currentProgress
-        navigationItem.title = "Question \(state.currentQuestionNumber) / \(state.totalNumberOfQuestions)"
+
         
         switch question.type {
         case .single:
@@ -123,6 +133,21 @@ class QuestionViewController: UIViewController {
     
     
     // MARK: - Navigation
+    func nextQuestion() {
+        if state.hasNextQuestion {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let questionViewController = storyboard.instantiateViewController(withIdentifier: "Question") as! QuestionViewController
+            questionViewController.state = state
+            navigationController?.show(questionViewController, sender: nil)
+            
+        } else {
+            print("Chosen answers: \(state.chosenAnswers)")
+            
+            performSegue(withIdentifier: ResultsViewController.endQuizSegueIdentifier, sender: nil)
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == ResultsViewController.endQuizSegueIdentifier,
             let resultsViewController = segue.destination as? ResultsViewController else { return }

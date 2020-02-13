@@ -126,6 +126,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-jC-YPs">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="didTapFirstSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="4wO-TG-CCo"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -140,6 +143,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-cX-UMi">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="didTapSecondSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="idW-fL-OaR"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -154,6 +160,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g6V-Fe-np9">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="didTapThirdSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="qYC-2h-wnv"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -168,16 +177,18 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-rh-qs0">
                                                 <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="didTapFourthSwitch:" destination="B2I-3v-eBt" eventType="valueChanged" id="z0j-PR-fWf"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXE-gA-xFK">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXE-gA-xFK">
                                         <rect key="frame" x="0.0" y="188" width="359" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Submit answer"/>
                                         <connections>
                                             <action selector="didTapSubmitAnswerButton:" destination="B2I-3v-eBt" eventType="touchUpInside" id="4fE-fn-Lam"/>
-                                            <action selector="submitMultipleChoiceAnswerButton:" destination="B2I-3v-eBt" eventType="touchUpInside" id="NgS-Go-gRO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -266,6 +277,7 @@
                         <outlet property="secondLabelMultipleChoice" destination="na0-yn-UUS" id="aKS-rj-1ir"/>
                         <outlet property="secondSwitch" destination="L2L-cX-UMi" id="jLu-YT-tiU"/>
                         <outlet property="singleChoiceStackView" destination="fk7-iN-1kP" id="wea-KR-8fO"/>
+                        <outlet property="submitMultipleAnswerButton" destination="nXE-gA-xFK" id="khv-8L-kis"/>
                         <outlet property="thirdButton" destination="W4B-Pn-web" id="F8G-JB-45J"/>
                         <outlet property="thirdLabelMultipleChoice" destination="BGx-wC-u8a" id="ZC5-ch-9nr"/>
                         <outlet property="thirdSwitch" destination="g6V-Fe-np9" id="bjx-vy-EAk"/>

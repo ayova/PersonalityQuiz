@@ -49,7 +49,7 @@ struct State {
     var currentProgress: Float {
         guard questions.count > 0 else { return 0.0 }
         
-        return Float(currentQuestionIndex)/Float(questions.count - 1)
+        return Float(currentQuestionIndex+1)/Float(questions.count)
     }
     
     var nextResponseType: ResponseType {
